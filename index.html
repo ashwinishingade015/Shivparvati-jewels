@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShivParvati Jewels - Designer Jewelry Studio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #0f0f0f;
+            color: #ffffff;
+        }
+
+        /* Header */
+        header {
+            background-color: #1a1a1a;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 2px solid #d4af37;
+        }
+
+        header h1 {
+            color: #d4af37;
+            font-size: 2.5rem;
+            letter-spacing: 2px;
+        }
+
+        header p {
+            color: #ccc;
+            font-style: italic;
+            margin-top: 5px;
+        }
+
+        /* Hero Banner */
+        .hero {
+            text-align: center;
+            padding: 60px 20px;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero h2 {
+            font-size: 2rem;
+            color: #fff;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            color: #ddd;
+            margin-bottom: 25px;
+        }
+
+        .btn {
+            background-color: #d4af37;
+            color: #000;
+            padding: 12px 25px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        /* Gallery Section */
+        .gallery-container {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            color: #d4af37;
+            margin-bottom: 30px;
+            font-size: 1.8rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background-color: #1a1a1a;
+            border: 1px solid #333;
+            border-radius: 8px;
+            overflow: hidden;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: #d4af37;
+        }
+
+        .card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .card h3 {
+            color: #d4af37;
+            margin: 15px 0 5px;
+        }
+
+        .card p {
+            color: #aaa;
+            padding: 0 15px 15px;
+            font-size: 0.9rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1a1a1a;
+            text-align: center;
+            padding: 20px;
+            margin-top: 50px;
+            border-top: 1px solid #333;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <h1>ShivParvati Jewels</h1>
+        <p>Timeless Elegance & Divine Beauty</p>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h2>Exclusive Designer Jewelry</h2>
+        <p>Explore our royal bridal collection and traditional designs crafted just for you.</p>
+        <a href="#gallery" class="btn">View Collection</a>
+    </section>
+
+    <!-- Gallery Section -->
+    <div class="gallery-container" id="gallery">
+        <h2 class="section-title">Our Exclusive Collections</h2>
+        <div class="grid">
+            
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=600&q=80" alt="Bridal Necklace">
+                <h3>Bridal Necklace</h3>
+                <p>Royal gold and pearl necklace sets designed for weddings.</p>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=600&q=80" alt="Diamond Ring">
+                <h3>Royal Diamond Ring</h3>
+                <p>Elegant and modern diamond rings for special occasions.</p>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=600&q=80" alt="Antique Earrings">
+                <h3>Antique Earrings</h3>
+                <p>Traditional gold Jhumkas giving you a grand traditional look.</p>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 ShivParvati Jewels. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
