@@ -17,7 +17,6 @@
             color: #ffffff;
         }
 
-        /* Header */
         header {
             background-color: #1a1a1a;
             padding: 20px;
@@ -37,7 +36,6 @@
             margin-top: 5px;
         }
 
-        /* Hero Banner */
         .hero {
             text-align: center;
             padding: 60px 20px;
@@ -60,14 +58,16 @@
         .btn {
             background-color: #d4af37;
             color: #000;
-            padding: 12px 25px;
+            padding: 10px 20px;
             text-decoration: none;
             font-weight: bold;
             border-radius: 5px;
-            font-size: 1rem;
+            cursor: pointer;
+            border: none;
+            margin-top: 10px;
+            display: inline-block;
         }
 
-        /* Gallery Section */
         .gallery-container {
             max-width: 1100px;
             margin: 40px auto;
@@ -94,6 +94,7 @@
             overflow: hidden;
             text-align: center;
             transition: transform 0.3s ease;
+            padding-bottom: 15px;
         }
 
         .card:hover {
@@ -114,11 +115,46 @@
 
         .card p {
             color: #aaa;
-            padding: 0 15px 15px;
+            padding: 0 15px 10px;
             font-size: 0.9rem;
         }
 
-        /* Footer */
+        /* Modal / Popup Screen */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            z-index: 1000;
+        }
+
+        .modal-content {
+            background: #1a1a1a;
+            border: 2px solid #d4af37;
+            padding: 25px;
+            border-radius: 10px;
+            max-width: 500px;
+            width: 100%;
+            text-align: center;
+            position: relative;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            color: #d4af37;
+            font-size: 28px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
         footer {
             background-color: #1a1a1a;
             text-align: center;
@@ -131,20 +167,17 @@
 </head>
 <body>
 
-    <!-- Header Section -->
     <header>
         <h1>ShivParvati Jewels</h1>
         <p>Timeless Elegance & Divine Beauty</p>
     </header>
 
-    <!-- Hero Section -->
     <section class="hero">
         <h2>Exclusive Designer Jewelry</h2>
         <p>Explore our royal bridal collection and traditional designs crafted just for you.</p>
         <a href="#gallery" class="btn">View Collection</a>
     </section>
 
-    <!-- Gallery Section -->
     <div class="gallery-container" id="gallery">
         <h2 class="section-title">Our Exclusive Collections</h2>
         <div class="grid">
@@ -153,27 +186,66 @@
                 <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=600&q=80" alt="Bridal Necklace">
                 <h3>Bridal Necklace</h3>
                 <p>Royal gold and pearl necklace sets designed for weddings.</p>
+                <button class="btn" onclick="openDetails('Bridal Necklace', '1. Antique Gold Necklace<br>2. Choker Set with Emeralds<br>3. Royal Kundan Haar<br>4. Temple Jewelry Necklace')">View Varieties</button>
             </div>
 
             <div class="card">
                 <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=600&q=80" alt="Diamond Ring">
                 <h3>Royal Diamond Ring</h3>
                 <p>Elegant and modern diamond rings for special occasions.</p>
+                <button class="btn" onclick="openDetails('Royal Diamond Ring', '1. Solitaire Engagement Ring<br>2. Rose Gold Couple Bands<br>3. Floral Diamond Ring<br>4. Vintage Platinum Ring')">View Varieties</button>
             </div>
 
             <div class="card">
                 <img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=600&q=80" alt="Antique Earrings">
                 <h3>Antique Earrings</h3>
                 <p>Traditional gold Jhumkas giving you a grand traditional look.</p>
+                <button class="btn" onclick="openDetails('Antique Earrings', '1. Royal Gold Jhumkas<br>2. Diamond Chandbali<br>3. Pearl Drop Earrings<br>4. Traditional Studs')">View Varieties</button>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1611591475281-b1e974275069?auto=format&fit=crop&w=600&q=80" alt="Gold Bangles">
+                <h3>Gold Bangles & Kada</h3>
+                <p>Handcrafted gold bangles with intricate heritage designs.</p>
+                <button class="btn" onclick="openDetails('Gold Bangles & Kada', '1. Traditional Kolhapuri Patlya<br>2. Antique Gold Kada<br>3. Diamond Studded Bangles<br>4. Floral Design Glass-Gold Mix')">View Varieties</button>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1603561591411-07134e71a2a9?auto=format&fit=crop&w=600&q=80" alt="Mangalsutra">
+                <h3>Designer Mangalsutra</h3>
+                <p>Sacred traditional Mangalsutras with modern touch.</p>
+                <button class="btn" onclick="openDetails('Designer Mangalsutra', '1. Short Daily Wear Mangalsutra<br>2. Long Traditional Double Chain<br>3. Diamond Pendant Mangalsutra<br>4. Black Bead Bracelet Mangalsutra')">View Varieties</button>
             </div>
 
         </div>
     </div>
 
-    <!-- Footer -->
+    <!-- Popup Screen -->
+    <div class="modal" id="modalBox">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeDetails()">&times;</span>
+            <h2 id="modalTitle" style="color: #d4af37;">Jewelry Name</h2>
+            <hr style="border-color: #333; margin: 15px 0;">
+            <p style="color: #d4af37; font-weight: bold; margin-bottom: 10px;">Available Varieties:</p>
+            <p id="modalVarieties" style="color: #fff; line-height: 1.8;"></p>
+        </div>
+    </div>
+
     <footer>
         <p>&copy; 2026 ShivParvati Jewels. All Rights Reserved.</p>
     </footer>
+
+    <script>
+        function openDetails(title, varieties) {
+            document.getElementById('modalTitle').innerText = title;
+            document.getElementById('modalVarieties').innerHTML = varieties;
+            document.getElementById('modalBox').style.display = 'flex';
+        }
+
+        function closeDetails() {
+            document.getElementById('modalBox').style.display = 'none';
+        }
+    </script>
 
 </body>
 </html>
